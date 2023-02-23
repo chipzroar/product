@@ -49,16 +49,10 @@ public class ProductCommerce implements IProduct{
     }
     @Override
     public void bulkOrder(Product[] p) {
-        for(Product product : p) {
-            if(search(product.getProdId()) != null) {
-                buyProduct(product.getProdId(), product.getQuantity());
-            }
-        }
+        for(Product product : p) if(search(product.getProdId()) != null) buyProduct(product.getProdId(), product.getQuantity());
     }
 
     public void display() {
-        for(Product p : products) {
-            if(p != null) System.out.println(p);
-        }
+        for(Product p : products) if(p != null) System.out.println(p);
     }
 }
